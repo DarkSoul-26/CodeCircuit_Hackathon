@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { FileCode, Search, Plus, Copy, Trash2, Check, Tag, FolderPlus } from "lucide-react";
+import { FileCode, Search, Plus, Copy, Trash2, Check, Tag, FolderPlus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -337,7 +336,7 @@ const SnippetManager = () => {
                   <SelectValue placeholder="All Languages" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Languages</SelectItem>
+                  <SelectItem key="all-languages" value="all">All Languages</SelectItem>
                   {languages.map((language) => (
                     <SelectItem key={language.value} value={language.value}>
                       {language.label}
@@ -356,7 +355,7 @@ const SnippetManager = () => {
                   <SelectValue placeholder="All Tags" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Tags</SelectItem>
+                  <SelectItem key="all-tags" value="all">All Tags</SelectItem>
                   {allTags.map((tag) => (
                     <SelectItem key={tag} value={tag}>
                       #{tag}
